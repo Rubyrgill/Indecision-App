@@ -2,25 +2,29 @@
 
 console.log("App.js is running")
 
-
+var app = {
+    title: 'The Indecision App',
+    subtitle: 'A basic react app',
+}
 //JSX - JavaScript XML (JS Syntax Extenstion)
 var template = (
     <div>
-        <h1 id="apptitle">Indecision App</h1>
-        <p>Information about the app</p>
+        <h1 id="apptitle">{app.title}</h1>
+        <p>{app.subtitle}</p>
     </div>
 );
 
-var userName = "Bill";
-var userAge = 25;
-var userLocation = "USA";
-
+var user = {
+    name: 'Bill',
+    age: 25,
+    location: 'Canada'
+}
 
 var templateTwo = (
     <div>
-        <h1>{userName.toUpperCase() + "!"}</h1>
-        <p>Age: {userAge}</p>
-        <p>Location: {userLocation}</p>
+        <h1>{user.name.toUpperCase() + "!"}</h1>
+        <p>Age: {user.age}</p>
+        <p>Location: {user.location}</p>
     </div>
 );
 var appRoot = document.getElementById("app")
@@ -28,7 +32,7 @@ var appRoot = document.getElementById("app")
 //Takes 2 arguments 
 //(1)-JSX what you want to render 
 //(2) DOM element - where you want to render it
-ReactDOM.render(templateTwo, appRoot)
+ReactDOM.render(template, appRoot)
 
 //running in server to watch for changes 
 //babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
