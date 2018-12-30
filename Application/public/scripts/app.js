@@ -1,14 +1,22 @@
 'use strict';
 
-//JSX
-
+//JSX - JavaScript XML (JS Syntax Extenstion)
 console.log("App.js is running");
 
+//CONDITIONAL RENDERING
+//if statements 
+//ternary operators 
+//logical and operator 
+//---------------------------
+
+
+//rendering object TEMPLATE
 var app = {
     title: 'The Indecision App',
     subtitle: 'A basic react app'
-    //JSX - JavaScript XML (JS Syntax Extenstion)
-};var template = React.createElement(
+};
+
+var template = React.createElement(
     'div',
     null,
     React.createElement(
@@ -23,11 +31,20 @@ var app = {
     )
 );
 
+//TemplateTwo
 var user = {
     name: 'Bill',
     age: 25,
-    location: 'Canada'
-};
+    location: ''
+
+    //conditional rendering function
+};function getLocation(location) {
+    if (location) {
+        return location;
+    } else {
+        return 'Unknown';
+    }
+}
 
 var templateTwo = React.createElement(
     'div',
@@ -47,7 +64,7 @@ var templateTwo = React.createElement(
         'p',
         null,
         'Location: ',
-        user.location
+        getLocation(user.location)
     )
 );
 var appRoot = document.getElementById("app");
@@ -55,7 +72,7 @@ var appRoot = document.getElementById("app");
 //Takes 2 arguments 
 //(1)-JSX what you want to render 
 //(2) DOM element - where you want to render it
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot);
 
 //running in server to watch for changes 
 //babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch

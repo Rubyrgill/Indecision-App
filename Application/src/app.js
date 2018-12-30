@@ -1,12 +1,19 @@
-//JSX
-
+//JSX - JavaScript XML (JS Syntax Extenstion)
 console.log("App.js is running")
 
+//CONDITIONAL RENDERING
+//if statements 
+//ternary operators 
+//logical and operator 
+//---------------------------
+
+
+//rendering object TEMPLATE
 var app = {
     title: 'The Indecision App',
     subtitle: 'A basic react app',
 }
-//JSX - JavaScript XML (JS Syntax Extenstion)
+
 var template = (
     <div>
         <h1 id="apptitle">{app.title}</h1>
@@ -14,25 +21,45 @@ var template = (
     </div>
 );
 
+
+
+//TemplateTwo
 var user = {
     name: 'Bill',
     age: 25,
-    location: 'Canada'
+    location: ''
 }
+
+//conditional rendering function
+function getLocation(location) {
+    if (location) {
+        return location;
+
+    } else {
+        return 'Unknown'
+    }
+}
+
+
 
 var templateTwo = (
     <div>
         <h1>{user.name.toUpperCase() + "!"}</h1>
         <p>Age: {user.age}</p>
-        <p>Location: {user.location}</p>
+        <p>Location: {getLocation(user.location)}</p>
     </div>
 );
 var appRoot = document.getElementById("app")
 
+
+
+
+
+
 //Takes 2 arguments 
 //(1)-JSX what you want to render 
 //(2) DOM element - where you want to render it
-ReactDOM.render(template, appRoot)
+ReactDOM.render(templateTwo, appRoot)
 
 //running in server to watch for changes 
 //babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
