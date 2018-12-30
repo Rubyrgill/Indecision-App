@@ -34,8 +34,9 @@ var template = React.createElement(
 //TemplateTwo
 var user = {
     name: 'Bill',
-    age: 25,
-    location: ''
+    age: 40,
+    location: 'Canada',
+    options: ['One', 'Two']
 
     //conditional rendering function
 };function getLocation(location) {
@@ -49,6 +50,7 @@ var user = {
     }
 }
 
+//renders age if above 18 for user.age
 var templateTwo = React.createElement(
     'div',
     null,
@@ -57,13 +59,18 @@ var templateTwo = React.createElement(
         null,
         user.name ? user.name : 'Anonymous'
     ),
-    React.createElement(
+    user.age >= 18 && React.createElement(
         'p',
         null,
         'Age: ',
         user.age
     ),
-    getLocation(user.location)
+    getLocation(user.location),
+    React.createElement(
+        'p',
+        null,
+        user.options.length > 0 ? 'The options' : 'No options available'
+    )
 );
 var appRoot = document.getElementById("app");
 

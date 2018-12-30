@@ -26,8 +26,9 @@ var template = (
 //TemplateTwo
 var user = {
     name: 'Bill',
-    age: 25,
-    location: ''
+    age: 40,
+    location: 'Canada',
+    options: ['One', 'Two']
 }
 
 //conditional rendering function
@@ -38,12 +39,14 @@ function getLocation(location) {
 }
 
 
-
+//renders age if above 18 for user.age
 var templateTwo = (
     <div>
         <h1>{user.name ? user.name : 'Anonymous'}</h1>
-        <p>Age: {user.age}</p>
+        {user.age >= 18 && <p>Age: {user.age}</p>}
         {getLocation(user.location)}
+        <p>{user.options.length > 0 ? 'The options' : 'No options available'}</p>
+
     </div>
 );
 var appRoot = document.getElementById("app")
@@ -58,5 +61,5 @@ var appRoot = document.getElementById("app")
 //(2) DOM element - where you want to render it
 ReactDOM.render(templateTwo, appRoot)
 
-//running in server to watch for changes 
+        //running in server to watch for changes 
 //babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
