@@ -9,12 +9,12 @@ console.log("App.js is running")
 
 
 //rendering object TEMPLATE
-var app = {
+const app = {
     title: 'The Indecision App',
     subtitle: 'A basic react app',
 }
 
-var template = (
+const template = (
     <div>
         <h1 id="apptitle">{app.title}</h1>
         <p>{app.subtitle}</p>
@@ -24,7 +24,7 @@ var template = (
 
 
 //TemplateTwo
-var user = {
+const user = {
     name: 'Bill',
     age: 40,
     location: 'Canada',
@@ -40,7 +40,7 @@ function getLocation(location) {
 
 
 //renders age if above 18 for user.age
-var templateTwo = (
+const templateTwo = (
     <div>
         <h1>{user.name ? user.name : 'Anonymous'}</h1>
         {user.age >= 18 && <p>Age: {user.age}</p>}
@@ -49,7 +49,7 @@ var templateTwo = (
 
     </div>
 );
-var appRoot = document.getElementById("app")
+const appRoot = document.getElementById("app")
 
 
 
