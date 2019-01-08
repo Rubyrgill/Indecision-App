@@ -22,9 +22,15 @@ const squareArrow = (x) => x * x;
 
 
 //CHALLENGE 
-//getFirstName arrow function - norm
+
 const getFirstName = (fullname) => {
-    return fullName;
+    console.log(fullname.split(" ")[0])
 }
 
-console.log(getFirstName("bob")
+getFirstName("bob smith")
+//getFirstName arrow function - norm
+// const getFirstName = (fullname) => {
+//     return fullName;
+// }
+
+// console.log(getFirstName("bob")
